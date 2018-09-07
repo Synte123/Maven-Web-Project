@@ -21,7 +21,7 @@ node {
 	      bat 'mvn sonar:sonar'
                 }
 	stage('Tomcat') {
-		copy C:\Users\DELL\.jenkins\workspace\mavenproject-pipeline\target\maven-web-project-1.4.war C:\Devopssoft\apache-tomcat-9.0.8\webapps\
+		copy %WORKSPACE%\target\maven-web-project-1.3.war C:\Devopssoft\apache-tomcat-9.0.8\webapps\
 	}
        
 }
