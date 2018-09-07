@@ -7,16 +7,18 @@ node {
           checkout scm
        }
 
-       stage('BuildArtifact'){
+       stage('BuildArtifact and sending to nexus'){
 
          // sh 'mvn install'
 	       
-	       sh 'mvn clean'
+	       //sh 'mvn clean'
+	       bat 'mvn clean deploy'
        }
 	   
       stage('Sonar') {
                     //add stage sonar
                    // sh 'mvn sonar:sonar'
+	      bat 'mvn sonar:sonar'
                 }
        
 }
